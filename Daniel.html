@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daniel Lopez | Web Designer</title>
+  <style>
+/* Flexbox container for service cards */
+.service-grid {
+  display: flex;
+  justify-content: space-between; /* Space between cards */
+  gap: 20px; /* Add some space between cards */
+  flex-wrap: wrap; /* Ensure the cards wrap when the screen size is small */
+  margin-top: 30px;
+}
+
+/* Flex styling for each service card */
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 300px; /* Ensure cards don’t stretch too wide */
+  flex: 1 1 30%; /* Allow cards to take 30% of the container width */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 6px solid transparent;
+  box-sizing: border-box; /* Prevent padding from affecting the width */
+}
+
+/* Hover effects for service cards */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+.service-card .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #54a0ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.service-card .btn:hover {
+  background-color: #2e86de;
+}
+
+/* Animation for service cards */
+.service-card.basic {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.service-card.standard {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.service-card.premium {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-card {
+    flex: 1 1 45%; /* Cards take up 45% width on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    flex: 1 1 100%; /* Cards take up full width on small screens */
+  }
+}
+
+/* Initial card styling */
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 6px solid transparent;
+}
+
+/* Hover effects */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #54a0ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.service-card .btn:hover {
+  background-color: #2e86de;
+}
+
+/* Animating the service cards */
+.service-card.basic {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.service-card.standard {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.service-card.premium {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Keyframe animation for fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.price {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #10ac84;
+  line-height: 1.4;
+}
+
+.price .monthly {
+  display: block;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #54a0ff;
+  outline: none;
+}
+
+form button {
+  background: #54a0ff;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #2e86de;
+}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9fb;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a1a, #333);
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(to right, #ff6b6b, #feca57, #1dd1a1);
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #feca57;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #feca57, #ff9ff3);
+      color: #1a1a1a;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      background: #222;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background: #444;
+    }
+
+    .section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.6em;
+      margin-bottom: 50px;
+      color: #222;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #ff6b6b;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    .project {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 6px solid #54a0ff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .project h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #555;
+    }
+
+    .project a {
+      color: #10ac84;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    ul li {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      flex: 1 1 250px;
+      border-top: 5px solid #ff9f43;
+      text-align: center;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="fade-in" style="background: linear-gradient(135deg, #6a0d0d, #b03a2e); color: #fff; padding: 50px 20px; text-align: center; position: relative;">
+  <h1 style="font-family: 'Roboto', sans-serif; font-size: 2.5em; font-weight: 700; letter-spacing: 1px;">Welcome to D-Code</h1>
+  <p style="font-size: 1.2em; margin-top: 15px; font-style: italic;">Where creativity meets technology to bring your ideas to life.</p>
+  
+  <nav style="margin-top: 20px;">
+    <a href="#portfolio" style="color: #feca57; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.3s ease;">Portfolio</a>
+    <a href="#services" style="color: #feca57; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.3s ease;">Services</a>
+    <a href="#contact" style="color: #feca57; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.3s ease;">Contact</a>
+  </nav>
+
+  <div class="header-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: -1;"></div>
+</header>
+
+
+  <section class="hero fade-in" style="animation-delay: 0.2s;">
+      <h1>Hey there! I'm Daniel Lopez 👋</h1>
+  <p>
+    I’m passionate about creating modern, dynamic websites that help small businesses like yours thrive online.<br>
+    Whether you’re looking to launch a brand new site or refresh your current one, I’m here to bring your vision to life.<br>
+    Let’s make something amazing together!
+  </p>
+  <a href="#portfolio">✨ Check out my work</a>
+
+  </section>
+
+ <section id="portfolio" class="section fade-in" style="animation-delay: 0.4s;">
+  <h2>Portfolio</h2>
+  <!-- Add the text here -->
+  <p style="text-align: center; font-size: 1em; color: #777; margin-top: 10px;">These are models made for demonstration purposes.</p>
+
+  <div class="project">
+    <h3>🍰 Bella's Bakery</h3>
+    <p>Redesign for a local bakery to improve mobile usability and online ordering.</p>
+    <a href="file:///C:/Users/danlo/Documents/Bellas%20Bakery.Html">View Website</a>
+  </div>
+
+  <div class="project">
+    <h3>💪 FitZone Gym</h3>
+    <p>Landing page for a gym to capture leads and schedule trial sessions.</p>
+    <a href="file:///C:/Users/danlo/Documents/Gym.html">Live Demo</a>
+  </div>
+
+  <div class="project">
+    <h3>🕯️ EcoGlow Candles</h3>
+    <p>Mockup for an eco-friendly candle shop—responsive and e-commerce ready.</p>
+    <a href="file:///C:/Users/danlo/Documents/candles.html">View Website</a>
+  </div>
+</section>
+
+<section id="services" class="section fade-in" style="animation-delay: 0.6s;">
+  <h2>Service Packages</h2>
+  <!-- Flex container for horizontal layout -->
+  <div class="service-grid">
+    <div class="service-card basic">
+      <h3>🚀 Basic</h3>
+      <ul>
+        <li>1-page website</li>
+        <li>Mobile responsive</li>
+        <li>Contact form</li>
+        <li>1 revision</li>
+      </ul>
+      <p class="price">$200 one-time<br><span class="monthly">+ $50/month</span></p>
+      <p class="contact-message">Interested in the Basic plan? <br> Contact me to discuss your needs!</p>
+    </div>
+
+    <div class="service-card standard">
+      <h3>⚡ Standard</h3>
+      <ul>
+        <li>Up to 5 pages</li>
+        <li>Custom design</li>
+        <li>SEO optimization</li>
+        <li>3 revisions</li>
+      </ul>
+      <p class="price">$400 one-time<br><span class="monthly">+ $150/month</span></p>
+      <p class="contact-message">Interested in the Standard plan? <br> Contact me to discuss your needs!</p>
+    </div>
+
+    <div class="service-card premium">
+      <h3>💎 Premium</h3>
+      <ul>
+        <li>Unlimited pages</li>
+        <li>E-commerce integration</li>
+        <li>Advanced SEO</li>
+        <li>Monthly support</li>
+      </ul>
+      <p class="price">$600 one-time<br><span class="monthly">+ $300/month</span></p>
+      <p class="contact-message">Interested in the Premium plan? <br> Contact me to discuss your needs!</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="contact" class="section contact fade-in" style="animation-delay: 0.8s;">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:danlop4k8@gmail.com">danlop4k8@gmail.com</a></p>
+    <p>Phone: <a href="tel:3053997412">305-399-7412</a></p>
+    <p>Let’s build something <strong>awesome</strong> together! 🎉</p>
+  </section>
+
+  <footer class="fade-in" style="animation-delay: 1s;">
+    <p>© 2025 Daniel Lopez | Crafted with ❤️ + code</p>
+  </footer>
+
+</body>
+</html>
+

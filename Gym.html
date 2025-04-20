@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitZone Gym</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      overflow-x: hidden;
+    }
+
+   header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: top 0.3s;
+}
+
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5em;
+  color: #ff6f00;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: white;
+  font-size: 1.2em;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  color: #ff6f00;
+}
+
+body {
+  padding-top: 100px; /* Make sure there's space for the fixed header */
+}
+
+  /* Hero Section */
+.hero {
+  background: url('https://images.pexels.com/photos/4108779/pexels-photo-4108779.jpeg') center/cover no-repeat;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  margin-top: 80px; /* To avoid header overlap */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero h2 {
+  font-size: 3.5em;
+  color: white;
+  z-index: 1;
+  margin: 0 0 20px 0; /* Adds margin to bottom of the title */
+}
+
+.hero p {
+  font-size: 1.5em;
+  color: white;
+  z-index: 1;
+  margin: 0 0 30px 0; /* Adds margin to bottom of the paragraph */
+}
+
+.hero a {
+  color: #ff6f00;
+  font-size: 1.4em;
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 3px solid #ff6f00;
+  border-radius: 5px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: #ff6f00;
+  color: black;
+}
+
+   /* About Section */
+.about {
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center;     /* Centers the content vertically */
+  padding: 80px 20px;
+  background-color: #222;
+  gap: 40px;               /* Adds space between text and image */
+  flex-wrap: wrap;         /* Makes it responsive on smaller screens */
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 40px;
+  text-align: center;      /* Centers text within the container */
+}
+
+.about-text h2 {
+  font-size: 2.5em;
+  color: #ff6f00;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centers image horizontally */
+}
+
+.about-image img {
+  width: 80%;              /* Set to 80% width for better responsiveness */
+  max-width: 500px;        /* Limits image size */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+    /* Services Section */
+    .services {
+      background-color: #333;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 2.8em;
+      margin-bottom: 40px;
+      color: #ff6f00;
+    }
+    .services-cards {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+    }
+    .service-card {
+      background: #444;
+      padding: 40px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 30%;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    .service-card h3 {
+      font-size: 2em;
+      color: #ff6f00;
+      margin-bottom: 20px;
+    }
+    .service-card p {
+      font-size: 1.2em;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: #222;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 2.8em;
+      color: #ff6f00;
+      margin-bottom: 40px;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #444;
+      padding: 40px;
+      border-radius: 8px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #333;
+      border: 1px solid #666;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.1em;
+    }
+    .contact-form button {
+      background-color: #ff6f00;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #e05d00;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer p {
+      font-size: 1em;
+    }
+    footer hr {
+      border: 1px solid #ff6f00;
+      width: 80%;
+      margin: 20px auto;
+    }
+    footer .example-text {
+      font-size: 1em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FitZone Gym</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div>
+      <h2>Transform Your Body</h2>
+      <p>Join FitZone Gym and push your limits</p>
+      <a href="#services">Explore Our Services</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-text">
+      <h2>Welcome to FitZone Gym</h2>
+      <p>FitZone Gym is dedicated to helping you achieve your fitness goals with professional training and the best equipment. Our mission is to create a community of individuals who push themselves to become the strongest versions of themselves.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.pexels.com/photos/4056962/pexels-photo-4056962.jpeg" alt="Gym Image">
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="services-cards">
+      <div class="service-card">
+        <h3>Personal Training</h3>
+        <p>Get one-on-one attention from our certified trainers to help you reach your fitness goals faster.</p>
+      </div>
+      <div class="service-card">
+        <h3>Group Fitness Classes</h3>
+        <p>Join our high-energy group fitness classes designed for all levels and fitness goals.</p>
+      </div>
+      <div class="service-card">
+        <h3>Nutrition Coaching</h3>
+        <p>Our nutrition experts will help you optimize your diet to complement your fitness routine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FitZone Gym. All Rights Reserved.</p>
+    <hr>
+    <p class="example-text">This is an example website</p>
+  </footer>
+
+</body>
+</html>
+

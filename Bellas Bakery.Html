@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bella's Bakery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f2; /* Light pastel background */
+      color: #4a4a4a;
+    }
+    
+    /* Header */
+    header {
+      background: #fbd1d1; /* Soft pink background */
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      border-bottom: 5px solid #ffb3b3;
+    }
+    header h1 {
+      font-size: 3em;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.pexels.com/photos/205961/pexels-photo-205961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      border-bottom: 5px solid #ffb3b3;
+      position: relative;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .hero h2 {
+      font-size: 3em;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      z-index: 2; /* Ensure text stays above the image */
+    }
+    .hero p {
+      font-size: 1.5em;
+      z-index: 2;
+      margin-bottom: 20px;
+    }
+    .hero a {
+      color: #fbd1d1;
+      font-size: 1.2em;
+      text-decoration: none;
+      padding: 12px 25px;
+      border: 2px solid #fbd1d1;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      z-index: 2;
+    }
+    .hero a:hover {
+      background-color: #fbd1d1;
+      color: white;
+    }
+
+    /* Menu Section */
+    .menu-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .menu-section h2 {
+      font-size: 2.5em;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+      color: #ff4d6d; /* Soft pink color for headings */
+    }
+    .menu-items {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .menu-item {
+      background: #fff;
+      border: 1px solid #f3f3f3;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+    }
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .menu-item h3 {
+      margin: 10px 0;
+      font-size: 1.6em;
+      font-family: 'Playfair Display', serif;
+      color: #ff4d6d;
+    }
+    .menu-item p {
+      font-size: 1.2em;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 60px 20px;
+      background: #fffbf8; /* Off-white background */
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      color: #ff4d6d;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #f1f1f1;
+      border-radius: 5px;
+      font-size: 1.1em;
+    }
+    .contact-form button {
+      background: #ff4d6d;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #ff1a3d;
+    }
+
+    /* Footer */
+    footer {
+      background: #ff4d6d;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer p {
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bella's Bakery</h1>
+    <p>Delicious Baked Goods for Every Occasion</p>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h2>Welcome to Bella's Bakery!</h2>
+      <p>Freshly baked, delicious treats every day!</p>
+      <a href="#menu">Explore Our Menu</a>
+    </div>
+  </div>
+
+  <section id="menu" class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/635409/pexels-photo-635409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cupcakes">
+        <h3>Cupcakes</h3>
+        <p>Sweet, fluffy cupcakes in various flavors.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cakes">
+        <h3>Cakes</h3>
+        <p>Delicious homemade cakes for every occasion.</p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/1546890/pexels-photo-1546890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cookies">
+        <h3>Cookies</h3>
+        <p>Freshly baked cookies with a variety of ingredients.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bella's Bakery. All Rights Reserved.</p>
+ <hr style="border: 1px solid #ff6f00; width: 80%; margin: 20px auto;">
+  <p style="font-size: 1em; color: #ccc;">This is an example website</p>
+  </footer>
+
+</body>
+</html>
